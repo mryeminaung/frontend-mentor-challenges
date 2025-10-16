@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  max-width: 1140px;
+  padding: 0 10px;
+  min-height: max-content;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%) no-repeat;
+  background-size: cover;
+}
+
+body,
+.extension-card {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ext-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px auto 20px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 13px;
+  box-shadow: 1px solid gray;
+}
+
+.theme-toggle {
+  padding: 10px 13px;
+  border: none;
+  border-radius: 10px;
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.filter-btns {
+  display: flex;
+  column-gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  color: black;
+  background-color: white;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.filter-btn.dark-filter-btn {
+  color: white;
+  background-color: hsl(224, 30%, 27%);
+}
+
+.active-btn {
+  color: white;
+  background-color: hsl(3, 77%, 44%);
+}
+
+.active-btn.dark-active-btn {
+  color: black;
+}
+
+/* cards */
+.extension-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.extension-card {
+  border: 0.1px solid #878787;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  background-color: white;
+  box-shadow: 2px solid gray;
+}
+
+.ext-head {
+  display: flex;
+  column-gap: 18px;
+}
+
+.ext-img {
+  width: 50px;
+  height: 50px;
+}
+
+.ext-body>h4 {
+  margin-bottom: 3px;
+}
+
+.ext-body>p {
+  font-size: 13px;
+  color: gray;
+}
+
+.ext-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ext-action>button {
+  border-radius: 80px;
+  border: 0.1px solid #e8e8e8;
+  background-color: white;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+
+.ext-action>button:hover {
+  background-color: hsl(3, 77%, 44%);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.3s;
+}
+
+.switch-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s, color 0.3s;
+}
+
+.switch-btn:hover {
+  background-color: hsl(3, 77%, 44%);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+.switch-input:checked+.switch-slider {
+  background-color: hsl(3, 77%, 44%);
+}
+
+.switch-input:checked+.switch-slider:before {
+  transform: translateX(22px);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 756px) {
+  .extension-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .extension-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
